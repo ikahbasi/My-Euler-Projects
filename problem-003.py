@@ -32,9 +32,5 @@ num = 600851475143
 lst = []
 for i in range_generator_forward(start=2, end=np.sqrt(num)):
     if prime(i) and (num%i)==0:
-        print(1, i)
-        if (i**2) > (num/2):
-            print(2, i)
-            break
         lst.append(i)
 print(max(lst))
