@@ -1,8 +1,8 @@
 from math import sqrt, ceil
 
 
-def range_generator_forward(start, end, step=1):
-    num = int(start)
+def range_generator(start, end, step=1):
+    num = start
     while num < end:
         yield num
         num += step
@@ -14,7 +14,7 @@ def isprime(num):
         prime = True
     else:
         prime = True
-        for j in range_generator_forward(start=2, end=ceil(sqrt(num)+1)):
+        for j in range_generator(start=2, end=ceil(sqrt(num)+1)):
             if not num % j:
                 prime = False
     return prime
