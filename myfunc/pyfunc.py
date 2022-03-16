@@ -1,6 +1,12 @@
 from math import sqrt, ceil
 
 
+def endless_generator(start=1, step=1):
+    num = start
+    while True:
+        yield num
+        num += step
+
 def range_generator(start, end, step=1):
     num = start
     while num < end:
@@ -62,3 +68,18 @@ def gcd(num1, num2):
 def lcm(num1, num2):
     # Least Common Multiple    LCM
     return num1*num2 / gcd(num1, num2)
+
+
+
+def collatz_sequence(start):
+    num = start
+    if num <=0:
+        return []
+    lst = [num]
+    while num!=1:
+        if num%2==0:
+            num //= 2
+        else:
+            num = 3 * num + 1
+        lst.append(num)
+    return lst
