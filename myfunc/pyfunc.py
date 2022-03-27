@@ -83,3 +83,16 @@ def collatz_sequence(start):
             num = 3 * num + 1
         lst.append(num)
     return lst
+
+
+
+def factorial(num):
+    f = num
+    while num != 1:
+        num -= 1
+        f *= num
+    return f
+
+def sum_of_digits(num):
+    lst = [int(_) for _ in str(num)]
+    return sum(lst)
